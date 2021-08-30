@@ -27,7 +27,7 @@
       <h1>Album example</h1>
       <p class="lead text-muted">Something short and leading about the collection below?its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
       <p>
-        <a href="#" class="btn btn-primary my-2">Main call to action</a>
+        <a href="https://www.hinatazaka46.com/" class="btn btn-primary my-2">Official Site</a>
         <a href="#" class="btn btn-secondary my-2">Secondary action</a>
       </p>
     </div>
@@ -37,35 +37,62 @@
     <div class="container">
 
       <div class="row">
-        <div class="col-md-4">
-          <%= render "card_img" %>
-        </div>
-        <div class="col-md-4">
-          <%= render "card_img" %>
-        </div>
-        <div class="col-md-4">
-          <%= render "card_img" %>
-        </div>
-
-        <div class="col-md-4">
-          <%= render "card_img" %>
-        </div>
-        <div class="col-md-4">
-          <%= render "card_img" %>
-        </div>
-        <div class="col-md-4">
-          <%= render "card_img" %>
-        </div>
-
-        <div class="col-md-4">
-          <%= render "card_img" %>
-        </div>
-        <div class="col-md-4">
-          <%= render "card_img" %>
-        </div>
-        <div class="col-md-4">
-          <%= render "card_img" %>
-        </div>
+        <% members = [
+             [
+               "加藤 史帆",
+               "https://cdn.hinatazaka46.com/images/14/2ce/45249d11fc5b16448be9c0cabb025/1000_1000_102400.jpg",
+             ],
+             [
+               "齊藤 京子",
+               "https://cdn.hinatazaka46.com/images/14/d66/9cfe7e97b476f5d8521a7672ff1c6/1000_1000_102400.jpg",
+             ],
+             [
+               "佐々木 美玲",
+               "https://cdn.hinatazaka46.com/images/14/fa9/885bf0c7f5255111679a92ba806c5/1000_1000_102400.jpg",
+             ],
+             [
+               "高本 彩花",
+               "https://cdn.hinatazaka46.com/images/14/50d/67df17ee0203e033d8a9211e7f91b/1000_1000_102400.jpg",
+             ],
+             [
+               "東村 芽依",
+               "https://cdn.hinatazaka46.com/images/14/388/00c38faca7d7ca65309ca98b7faec/1000_1000_102400.jpg",
+             ],
+             [
+               "河田 陽菜",
+               "https://cdn.hinatazaka46.com/images/14/5b1/731ff3e0e0b349201df9768638e6f/1000_1000_102400.jpg",
+             ],
+             [
+               "丹生 明里",
+               "https://cdn.hinatazaka46.com/images/14/b87/6ee64bac1891d599e4bac0f9edf7b/1000_1000_102400.jpg",
+             ],
+             [
+               "濱岸 ひより",
+               "https://cdn.hinatazaka46.com/images/14/8a4/36bd4510f67e0c0cc7be806cb08d6/1000_1000_102400.jpg",
+             ],
+             [
+               "上村 ひなの",
+               "https://cdn.hinatazaka46.com/images/14/cf8/a6b6ee6cf204f3258a046340a262b/1000_1000_102400.jpg",
+             ],
+             [
+               "髙橋 未来虹",
+               "https://cdn.hinatazaka46.com/images/14/476/217d79b0390abc5e78d8cd6e10bed/1000_1000_102400.jpg",
+             ],
+             [
+               "柿崎 芽実",
+               "https://48pedia.org/images/9/93/2019%E5%B9%B4%E3%81%91%E3%82%84%E3%81%8D%E5%9D%8246%E3%83%97%E3%83%AD%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB_%E6%9F%BF%E5%B4%8E%E8%8A%BD%E5%AE%9F.jpg",
+             ],
+             [
+               "井口 眞緒",
+               "https://48pedia.org/images/b/ba/2019%E5%B9%B4%E3%81%91%E3%82%84%E3%81%8D%E5%9D%8246%E3%83%97%E3%83%AD%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB_%E4%BA%95%E5%8F%A3%E7%9C%9E%E7%B7%92.jpg",
+             ],
+           ] %>
+           
+        <% members.each do |member| %>
+          <div class="col-md-4">
+            <%= render partial: "card_img", locals: { member: member } %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
