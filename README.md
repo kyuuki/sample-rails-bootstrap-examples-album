@@ -1,11 +1,13 @@
-Rails サンプルベース
-====================
+Rails Bootstrap サンプル
+========================
 
 [![Build status][shield-build]](#)
 [![MIT licensed][shield-license]](#)
 [![Rails][shield-rails]][rails]
 
-Rails サンプルを作成するためのベース
+Rails 6 に Bootstrap 4 を導入するサンプル。
+
+CDN を利用してお手軽に導入する方法。
 
 ## Table of Contents
 
@@ -20,51 +22,31 @@ Rails サンプルを作成するためのベース
 ## Technologies
 
 * [Rails][rails] 6.0.4.1
+* [Bootstrap](https://getbootstrap.com/) 4.6
 * [PostgreSQL][postgresql]
 * [Heroku][heroku]
 
 ## Demo
 
-* [Heroku](https://kyuuki-sample-rails-base.herokuapp.com)
+* [Heroku](https://kyuuki-sample-rails-bootstrap.herokuapp.com)
 
 ## Getting started
 
 ### Rails アプリケーション作成
 
 ```sh
-$ rails new sample-rails-base -d postgresql --skip-turbolinks
-$ cd sample-rails-base
-$ git add .
-$ git commit -m "Initial commit"
+$ git clone git@github.com:kyuuki/sample-rails-base.git sample-rails-bootstrap
+$ cd sample-rails-bootstrap
 ```
 
-### トップページ作成
+### Bootstrap 導入
 
-```sh
-$ rails g controller StaticPage top
-```
+- [Starter template](https://getbootstrap.com/docs/4.6/getting-started/introduction/#starter-template) を参考に [app/views/layouts/application.html.erb](app/views/layouts/application.html.erb) を編集  
+  [[commit]](https://github.com/kyuuki/sample-rails-bootstrap/commit/cc0c6712c65a2ae34371dd804a846da8e03e2bcd)
 
-- [config/routes.rb](config/routes.rb) を編集
+### トップページにボタンを追加して確認
 
-```ruby
-Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root 'static_page#top'
-  # root to: 'static_page#top'  # 上記はこれの省略形
-end
-```
-
-- [app/controllers/static_page_controller.rb](app/controllers/static_page_controller.rb) を編集
-
-```ruby
-class StaticPageController < ApplicationController
-  def top
-    # render :top  # これが省略されている
-  end
-end
-```
-
-- [app/views/static_page/top.html.erb](app/views/static_page/top.html.erb) を編集
+- [app/views/static_page/top.html.erb](app/views/static_page/top.html.erb) にボタンを追加して、Bootstrap が適用できたか確認
 
 ```erb
 <h1>トップページ</h1>
@@ -72,15 +54,17 @@ end
 <p>
   トップページの内容。
 </p>
+
+<button type="button" class="btn btn-primary">Primary</button> ← 追加
 ```
 
 ### GitHub
 
-- GitHub に sample-rails-base という名前でリポジトリ追加
+- GitHub に sample-rails-bootstrap という名前でリポジトリ追加
 
 ```sh
-$ git remote add origin git@github.com:kyuuki/sample-rails-base.git
-$ git push -u origin master
+$ git remote set-url origin git@github.com:kyuuki/sample-rails-bootstrap.git
+$ git push origin master
 ```
 
 ## Deployment
@@ -88,7 +72,7 @@ $ git push -u origin master
 Heroku にデプロイ
 
 ```sh
-$ heroku create kyuuki-sample-rails-base
+$ heroku create kyuuki-sample-rails-bootstrap
 $ git push heroku master
 ```
 <!-- $ heroku run rake db:migrate (今回は不要) -->
@@ -96,7 +80,10 @@ $ git push heroku master
 ## Usage
 
 ```sh
-$ git clone git@github.com:kyuuki/sample-rails-top_page.git
+$ git clone git@github.com:kyuuki/sample-rails-bootstrap.git
+$ cd sample-rails-bootstrap
+$ bundle install
+$ yarn install
 $ rails db:create
 $ rails s -b 0.0.0.0
 ```
@@ -104,8 +91,7 @@ $ rails s -b 0.0.0.0
 
 ## References
 
-* [Ruby on Rails Guides (v6.0.x) (英)](https://guides.rubyonrails.org/v6.0/)
-* [Ruby on Rails ガイド (日)](https://railsguides.jp/)
+* [Bootstrap 4.6 Documentation](https://getbootstrap.com/docs/4.6/)
 
 ## License
 
