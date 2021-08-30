@@ -1,13 +1,13 @@
-Rails Bootstrap サンプル
-========================
+Rails Bootstrap Examples (Album)
+================================
 
 [![Build status][shield-build]](#)
 [![MIT licensed][shield-license]](#)
 [![Rails][shield-rails]][rails]
 
-Rails 6 に Bootstrap 4 を導入するサンプル。
+Rails 6 に Bootstrap 4 の Examples (Album) を組み込んだサンプル。
 
-CDN を利用してお手軽に導入する方法。
+https://getbootstrap.com/docs/4.6/examples/album/
 
 ## Table of Contents
 
@@ -28,42 +28,27 @@ CDN を利用してお手軽に導入する方法。
 
 ## Demo
 
-* [Heroku](https://kyuuki-sample-rails-bootstrap.herokuapp.com)
+* [Heroku](https://kyuuki-sample-rails-album.herokuapp.com)
 
 ## Getting started
 
 ### Rails アプリケーション作成
 
 ```sh
-$ git clone git@github.com:kyuuki/sample-rails-base.git sample-rails-bootstrap
-$ cd sample-rails-bootstrap
+$ git clone git@github.com:kyuuki/sample-rails-bootstrap.git sample-rails-bootstrap-examples-album
+$ cd sample-rails-bootstrap-examples-album/
 ```
 
-### Bootstrap 導入
+### Examples (Album) 組み込み
 
-- [Starter template](https://getbootstrap.com/docs/4.6/getting-started/introduction/#starter-template) を参考に [app/views/layouts/application.html.erb](app/views/layouts/application.html.erb) を編集  
-  [[commit]](https://github.com/kyuuki/sample-rails-bootstrap/commit/cc0c6712c65a2ae34371dd804a846da8e03e2bcd)
-
-### トップページにボタンを追加して確認
-
-- [app/views/static_page/top.html.erb](app/views/static_page/top.html.erb) にボタンを追加して、Bootstrap が適用できたか確認
-
-```erb
-<h1>トップページ</h1>
-
-<p>
-  トップページの内容。
-</p>
-
-<button type="button" class="btn btn-primary">Primary</button> ← 追加
-```
+- [[commit]](https://github.com/kyuuki/sample-rails-bootstrap-examples-album/commit/a0ac04d90b0211fe85bc0db65a95009d4de11749)
 
 ### GitHub
 
-- GitHub に sample-rails-bootstrap という名前でリポジトリ追加
+- GitHub に sample-rails-bootstrap-examples-album という名前でリポジトリ追加
 
 ```sh
-$ git remote set-url origin git@github.com:kyuuki/sample-rails-bootstrap.git
+$ git remote set-url origin git@github.com:kyuuki/sample-rails-bootstrap-examples-album.git
 $ git push origin master
 ```
 
@@ -72,7 +57,7 @@ $ git push origin master
 Heroku にデプロイ
 
 ```sh
-$ heroku create kyuuki-sample-rails-bootstrap
+$ heroku create kyuuki-sample-rails-album (maximum is 30 characters)
 $ git push heroku master
 ```
 <!-- $ heroku run rake db:migrate (今回は不要) -->
@@ -80,8 +65,8 @@ $ git push heroku master
 ## Usage
 
 ```sh
-$ git clone git@github.com:kyuuki/sample-rails-bootstrap.git
-$ cd sample-rails-bootstrap
+$ git clone git@github.com:kyuuki/sample-rails-bootstrap-examples-album.git
+$ cd sample-rails-bootstrap-examples-album
 $ bundle install
 $ yarn install
 $ rails db:create
